@@ -1,14 +1,25 @@
 package org.example;
 
-
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.eclipse.jgit.lib.Repository;
+import org.refactoringminer.api.GitHistoryRefactoringMiner;
+import org.refactoringminer.api.GitService;
+import org.refactoringminer.api.Refactoring;
+import org.refactoringminer.api.RefactoringHandler;
+import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
+import org.refactoringminer.util.GitServiceImpl;
+import spoon.Launcher;
 import spoon.processing.AbstractProcessor;
 import spoon.reflect.code.CtInvocation;
 import spoon.reflect.declaration.CtMethod;
+import spoon.reflect.factory.Factory;
 import spoon.reflect.visitor.filter.TypeFilter;
+import spoon.support.compiler.VirtualFile;
 
 import java.io.*;
+import java.util.*;
 import java.util.stream.Collectors;
-
 
 public class Assertion extends AbstractProcessor<CtMethod<?>> {
 
@@ -17,31 +28,10 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
     int testsWithoutAssertion = 0;
     int testsWithNullBody = 0;
 
-    private BufferedWriter csvWriter;
-
     public Assertion() {
-        try {
-            // Starts up the CSV writer
-            csvWriter = new BufferedWriter(new FileWriter("test_analysis.csv"));
-
-            // Include body code
-            // "Name of Test, Assertion, Body Code, File Path, Kind of Assertions, Number of Assertions, Method Signature, Annotation"
-            csvWriter.write("\"Name of Test\",\"Assertion\",\"Number of Assertions\",\"Kind of Assertions\",\"Body Code\",\"Method Signature\",\"Annotations\",\"File Path\",\"Git Log\"");
-            csvWriter.newLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
-    /*
-    private String fixBodyCode(String body, int maxLength) {
-        if (body.length() > maxLength) {
-            return body.substring(0, maxLength) + "...";
-        }
-        return body;
-    }
-     */
-
+    private Map<String, List<String>> testMethodsByCommit = new LinkedHashMap<>(); // Stores test code per commit
     @Override
     public void process(CtMethod<?> method) {
 
@@ -50,14 +40,6 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
                 .anyMatch(annot -> annot.getAnnotationType().getSimpleName().equals("Test")
                         || method.getSimpleName().startsWith("test") ||
                         method.getSimpleName().endsWith("Test"));
-
-        /*
-        // If there is no test case then state there isn't one
-        if (!isTestCase) {
-            System.out.println("Not a proper test");
-        }
-         */
-
 
         // If there is a test case then do the following
         if (isTestCase) {
@@ -69,14 +51,10 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
             String assertionState = "FALSE";
             int numberOfAssertions = 0;
             String kindOfAssertion = "None";
-            String bodyCode = "No Body";
             String filePath = "Empty";
             String methodSignature = "None";
             String annotations = "None";
-            String gitLog = "N/A";
-
-            // Get method signature
-            methodSignature = method.getSignature();
+            String bodyCode = "N/A";
 
             // Get annotations
             annotations = method.getAnnotations().stream()
@@ -91,7 +69,14 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
                 if (startOfPath != -1) {
                     filePath = filePath.substring(startOfPath).replace("\\", "/");
                 }
-                gitLog = getGitLogForFile(filePath);
+
+                // CHANGED THIS
+                String gitLog = getGitLogForFile(filePath);
+                System.out.println("Extracted Git Changes for " + testName + ":\n" + gitLog);
+
+                // Store changes by commit for JSON output
+                testMethodsByCommit.put(testName, Collections.singletonList(gitLog));
+                JSONOutput();
             }
 
             // Logic of body
@@ -100,19 +85,16 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
                 bodyCode = method.getBody().toString();
 
                 // Gets the number of assertions and the kind
-                /*
                 List<CtInvocation> assertionInvocations = method.getBody()
                         .getElements(new TypeFilter<>(CtInvocation.class)).stream()
                         .filter(invocation -> invocation.getExecutable()
                                 .getSimpleName().startsWith("assert"))
-                        .toList();
+                        .collect(Collectors.toList()); // toList(); before
                 numberOfAssertions = assertionInvocations.size();
                 kindOfAssertion = assertionInvocations.stream().map(invocation -> invocation.getExecutable().getSimpleName())
                         .distinct()
                         .reduce((a, b) -> a + "\n" + b)
                         .orElse("None");
-
-                 */
 
                 // Check if the test contains assertions within
                 boolean hasAssertions = method.getBody()
@@ -133,46 +115,49 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
             } else {
                 testsWithNullBody++;
             }
-
-            // Use "git log --follow <filepath> to get commits of the test cases file
-            // These commitIds will then be used to get refactorings of the tests using refactoringminer API
-
-
-            try {
-                csvWriter.write(String.format("\"%s\",\"%s\",\"%d\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"",
-                        testName, assertionState, numberOfAssertions, kindOfAssertion, bodyCode.replace("\"", "\"\""), methodSignature, annotations, filePath,
-                        gitLog));
-                csvWriter.newLine();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     @Override
     public void processingDone() {
         // Purpose: Print test totals
-        try {
-            System.out.println("Total Number of Tests: " + totalNumOfTests);
-            System.out.println("Tests with Assertion: " + testsWithAssertion);
-            System.out.println("Tests without Assertion: " + testsWithoutAssertion);
-            System.out.println("Tests with Null Body: " + testsWithNullBody);
+        System.out.println("Total Number of Tests: " + totalNumOfTests);
+        System.out.println("Tests with Assertion: " + testsWithAssertion);
+        System.out.println("Tests without Assertion: " + testsWithoutAssertion);
+        System.out.println("Tests with Null Body: " + testsWithNullBody);
+    }
 
-            if (csvWriter != null) {
-                csvWriter.close();
-            }
+    private void JSONOutput() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("git_changes.json"))) {
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            writer.write(gson.toJson(testMethodsByCommit));
+            System.out.println("JSON file saved as git_changes.json");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    // Idea of implementation, not done and will change
+    private String getMethodBody(String fileContent, String methodName) {
+        Launcher launcher = new Launcher();
+        launcher.addInputResource(new VirtualFile(fileContent));
+        launcher.buildModel();
+
+        Factory factory = launcher.getFactory();
+        List<CtMethod<?>> testMethods = factory.getModel().getElements(new TypeFilter<>(CtMethod.class));
+
+        for (CtMethod<?> method : testMethods) {
+            if (method.getSimpleName().equals(methodName)) {
+                return method.getBody().toString();
+            }
+        }
+        return "Method not found";
+    }
+
     private String getGitLogForFile(String filePath) {
         String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
 
-        // Full path to git executable (adjust for your system)
-        // Update this as needed/ Fix
-        String gitExecutable = "/opt/homebrew/bin/git";
-
+        StringBuilder resultOfMethod = new StringBuilder();
         try {
             int startOfPath = filePath.indexOf("ambari");
             if (startOfPath == -1) {
@@ -183,29 +168,90 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
             String relativePath = filePath.substring(startOfPath + "ambari".length());
             String adjustedPath = relativePath.replace("\\", "/");
             if (adjustedPath.startsWith("/")) {
-                adjustedPath = adjustedPath.substring(1); // Remove leading slash
+                adjustedPath = adjustedPath.substring(1);
             }
 
             // Executes the command
             // Fix this
-            ProcessBuilder processBuilder = new ProcessBuilder(gitExecutable, "log", "--pretty=format:%H", "--follow", "--", adjustedPath);
+            ProcessBuilder processBuilder = new ProcessBuilder("git", "log", "--pretty=format:%H", "--follow", "--", adjustedPath);
             processBuilder.directory(new File(gitBaseDir));
             processBuilder.redirectErrorStream(true);
             Process process = processBuilder.start();
 
+
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
-                String commitIDs = reader.lines().collect(Collectors.joining("\n"));
+                // Convert to list of commit IDs
+                List<String> commitIDs = reader.lines().collect(Collectors.toList());
                 if (commitIDs.isEmpty()) {
-                    System.err.println("Git log returned no results for: " + adjustedPath);
+                    System.out.println("Git log returned no results for: " + adjustedPath);
                     return "No commit IDs found";
                 }
-                return commitIDs;
+                // Start implementation of refactoring miner API
+                GitService gitService = new GitServiceImpl();
+                GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+                Repository repo = gitService.cloneIfNotExists(
+                        "temp/ambari",
+                        "https://github.com/apache/ambari.git");
+
+                int versionCounter = 1;
+                // Iterates through list (commitIDs)
+                for (String commitId : commitIDs) {
+                    resultOfMethod.append("Version ").append(versionCounter).append(" refactoring of ").append(commitId).append(" are:\n");
+                    miner.detectAtCommit(repo, commitId, new RefactoringHandler() {
+                        @Override
+                        public void handle(String commitId, List<Refactoring> refactorings) {
+                            for (Refactoring ref : refactorings) {
+                                resultOfMethod.append(ref.toString()).append("\n");
+                            }
+                        }
+                    });
+                }
+                repo.close();
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Can't get commit ID";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "API not working";
+        }
+        return resultOfMethod.toString();
+    }
+
+
+    /* Will implement later once done with git show
+    private Map<String, String> getGitDiffForCommits(String filepath, List<String> commitIDs) {
+        Map<String, String> commitDiffs = new LinkedHashMap<>();
+
+        String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
+        try {
+            for (int i = 0; i < commitIDs.size() - 1; i++) {
+                String firstCommit = commitIDs.get(i);
+                String secondCommit = commitIDs.get(i + 1);
+
+                ProcessBuilder processBuilder =  new ProcessBuilder("git", "diff", firstCommit, secondCommit, "--", filepath);
+                processBuilder.directory(new File(gitBaseDir));
+                processBuilder.redirectErrorStream(true);
+                Process process = processBuilder.start();
+
+                StringBuilder differenceOutputs = new StringBuilder();
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                    reader.lines().forEach(line -> differenceOutputs.append(line).append("\n"));
+                }
+                if (!differenceOutputs.toString().trim().isEmpty()) {
+                    commitDiffs.put(firstCommit + "->" + secondCommit, differenceOutputs.toString());
+                    // Debugging Output
+                    System.out.println("\n Git Diff between " + firstCommit + " and " + secondCommit + " for " + filepath + ":\n" + commitDiffs);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
-            return "Error retrieving commit ID";
         }
+        return commitDiffs;
     }
+
+     */
 }
 
 /*
@@ -281,4 +327,124 @@ private String getGitLogForFile(String filePath) {
 
 }
 
+
+
+
+private String getGitLogForFile(String filePath) {
+        String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
+
+        // Full path to git executable (adjust for your system)
+        // Update this as needed/ Fix
+        String gitExecutable = "/opt/homebrew/bin/git";
+
+        try {
+            int startOfPath = filePath.indexOf("ambari");
+            if (startOfPath == -1) {
+                System.err.println("Error: File path does not contain 'ambari'");
+                return "Error: File path does not contain 'ambari'";
+            }
+
+            String relativePath = filePath.substring(startOfPath + "ambari".length());
+            String adjustedPath = relativePath.replace("\\", "/");
+            if (adjustedPath.startsWith("/")) {
+                adjustedPath = adjustedPath.substring(1); // Remove leading slash
+            }
+
+            // Executes the command
+            // Fix this
+            ProcessBuilder processBuilder = new ProcessBuilder(gitExecutable, "log", "--pretty=format:%H", "--follow", "--", adjustedPath);
+            processBuilder.directory(new File(gitBaseDir));
+            processBuilder.redirectErrorStream(true);
+            Process process = processBuilder.start();
+
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                String commitIDs = reader.lines().collect(Collectors.joining("\n"));
+                if (commitIDs.isEmpty()) {
+                    System.err.println("Git log returned no results for: " + adjustedPath);
+                    return "No commit IDs found";
+                }
+                return commitIDs;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Error retrieving commit ID";
+        }
+    }
+}
+
+
+
+
+This version is the most recent one
+    private String getGitLogForFile(String filePath) {
+        String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
+
+        // Full path to git executable (adjust for your system)
+        // Update this as needed/ Fix
+        String gitExecutable = "/opt/homebrew/bin/git";
+
+        StringBuilder resultOfMethod = new StringBuilder();
+        try {
+            int startOfPath = filePath.indexOf("ambari");
+            if (startOfPath == -1) {
+                System.err.println("Error: File path does not contain 'ambari'");
+                return "Error: File path does not contain 'ambari'";
+            }
+
+            String relativePath = filePath.substring(startOfPath + "ambari".length());
+            String adjustedPath = relativePath.replace("\\", "/");
+            if (adjustedPath.startsWith("/")) {
+                adjustedPath = adjustedPath.substring(1); // Remove leading slash
+            }
+
+            // Executes the command
+            // Fix this
+            ProcessBuilder processBuilder = new ProcessBuilder(gitExecutable, "log", "--pretty=format:%H", "--follow", "--", adjustedPath);
+            processBuilder.directory(new File(gitBaseDir));
+            processBuilder.redirectErrorStream(true);
+            Process process = processBuilder.start();
+
+
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                // Convert to list of commit IDs
+                List<String> commitIDs = reader.lines().collect(Collectors.toList());
+                if (commitIDs.isEmpty()) {
+                    System.out.println("Git log returned no results for: " + adjustedPath);
+                    return "No commit IDs found";
+                }
+                // Start implementation of refactoring miner API
+                GitService gitService = new GitServiceImpl();
+                GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+                Repository repo = gitService.cloneIfNotExists(
+                        "temp/ambari",
+                        "https://github.com/apache/ambari.git");
+
+                int versionCounter = 1;
+                // Iterates through list (commitIDs)
+                for (String commitId : commitIDs) {
+                    resultOfMethod.append("Version ").append(versionCounter).append(" refactoring of ").append(commitId).append(" are:\n");
+                    miner.detectAtCommit(repo, commitId, new RefactoringHandler() {
+                        @Override
+                        public void handle(String commitId, List<Refactoring> refactorings) {
+                            for (Refactoring ref : refactorings) {
+                                resultOfMethod.append(ref.toString()).append("\n");
+                            }
+                        }
+                    });
+                    versionCounter++;
+                    resultOfMethod.append("\n");
+                }
+                repo.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "Can't get commit ID";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "API not working";
+        }
+        return resultOfMethod.toString();
+    }
  */
+
+
