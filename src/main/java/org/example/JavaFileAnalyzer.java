@@ -23,7 +23,7 @@ public class JavaFileAnalyzer {
         launcher.getEnvironment().setIgnoreDuplicateDeclarations(true);
         launcher.getEnvironment().setCopyResources(false);
         launcher.getEnvironment().setIgnoreSyntaxErrors(true);
-        launcher.run();
+        launcher.buildModel();
 
 
         // Create a rule

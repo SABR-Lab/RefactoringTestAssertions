@@ -48,10 +48,10 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
 
             // Important values
             String testName = method.getSimpleName();
+            String filePath;
             String assertionState = "FALSE";
             int numberOfAssertions = 0;
             String kindOfAssertion = "None";
-            String filePath = "Empty";
             String methodSignature = "None";
             String annotations = "None";
             String bodyCode = "N/A";
@@ -71,7 +71,9 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
                 }
 
                 // CHANGED THIS
+                List<String> commitIDs = onlyCommitHashes(filePath);
                 String gitLog = getGitLogForFile(filePath);
+                System.out.println("Extracted Commit IDs: " + commitIDs);
                 System.out.println("Extracted Git Changes for " + testName + ":\n" + gitLog);
 
                 // Store changes by commit for JSON output
@@ -137,23 +139,79 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
         }
     }
 
-    // Idea of implementation, not done and will change
-    private String getMethodBody(String fileContent, String methodName) {
-        Launcher launcher = new Launcher();
-        launcher.addInputResource(new VirtualFile(fileContent));
-        launcher.buildModel();
+    // Retrieves commit IDs of files
+    private List<String> onlyCommitHashes(String filePath) {
+        String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
 
-        Factory factory = launcher.getFactory();
-        List<CtMethod<?>> testMethods = factory.getModel().getElements(new TypeFilter<>(CtMethod.class));
+        // Full path to git executable (adjust for your system)
+        // Update this as needed/ Fix
+        String gitExecutable = "/opt/homebrew/bin/git";
 
-        for (CtMethod<?> method : testMethods) {
-            if (method.getSimpleName().equals(methodName)) {
-                return method.getBody().toString();
+        try {
+            int startOfPath = filePath.indexOf("ambari");
+            if (startOfPath == -1) {
+                System.err.println("Error: File path does not contain 'ambari'");
             }
+
+            String relativePath = filePath.substring(startOfPath + "ambari".length());
+            String adjustedPath = relativePath.replace("\\", "/");
+            if (adjustedPath.startsWith("/")) {
+                adjustedPath = adjustedPath.substring(1); // Remove leading slash
+            }
+
+            // Executes the command
+            // Fix this
+            ProcessBuilder processBuilder = new ProcessBuilder(gitExecutable, "log", "--pretty=format:%H", "--follow", "--", adjustedPath);
+            processBuilder.directory(new File(gitBaseDir));
+            processBuilder.redirectErrorStream(true);
+            Process process = processBuilder.start();
+
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                List<String> commitIDs = reader.lines().collect(Collectors.toList());
+                System.out.println("The commit IDS here: " + commitIDs);
+                if (commitIDs.isEmpty()) {
+                    System.err.println("Method onlyCommitHashes returned no results for: " + adjustedPath);
+                }
+                return commitIDs;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Collections.emptyList();
         }
-        return "Method not found";
     }
 
+    private void gitCheckoutUsage(String filePath) {
+        List<String> commitIDs = onlyCommitHashes(filePath);
+
+        if (commitIDs.isEmpty()) {
+            System.out.println("No commits found for: " + filePath);
+            return;
+        }
+        String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
+
+        for (String commit : commitIDs) {
+            try {
+                ProcessBuilder processBuilder = new ProcessBuilder("git", "checkout", commit);
+                processBuilder.directory(new File(gitBaseDir));
+                processBuilder.redirectErrorStream(true);
+                Process process = processBuilder.start();
+
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                    reader.lines().forEach(System.out::println);
+                }
+
+                int exitCode = process.waitFor();
+                if (exitCode != 0) {
+                    System.err.println("Method is not working at the commit: " + commit);
+                }
+            } catch (IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    // This is refactoring miner output
     private String getGitLogForFile(String filePath) {
         String gitBaseDir = System.getProperty("user.home") + "/Desktop/SoftwareTestingTool/src/main/resources/ambari";
 
@@ -205,6 +263,7 @@ public class Assertion extends AbstractProcessor<CtMethod<?>> {
                             }
                         }
                     });
+                    versionCounter++;
                 }
                 repo.close();
             }
