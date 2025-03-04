@@ -7,32 +7,32 @@ import spoon.reflect.factory.Factory;
 import spoon.support.QueueProcessingManager;
 
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class JavaFileAnalyzer {
-    //The Spoon Launcher (JavaDoc) is used to create the AST model of a project
-    final static Launcher launcher = new Launcher();
-
-    public static void main(String[] args) {
-        //Add java file to be parsed in spoon
+    private static final Launcher launcher = new  Launcher();
+    public static List<String> analyzeTests() {
+        // Add the Java files to be parsed
         launcher.addInputResource(Paths.get(System.getProperty("user.dir"),
                 "src", "main", "resources", "ambari").toString());
 
-        // Parse the java file into AST
+        // Configure the Spoon environment
         launcher.getEnvironment().setCommentEnabled(false);
         launcher.getEnvironment().setIgnoreDuplicateDeclarations(true);
         launcher.getEnvironment().setCopyResources(false);
         launcher.getEnvironment().setIgnoreSyntaxErrors(true);
         launcher.buildModel();
 
+        // Create and run the assertion processor
+        Assertion assertionProcessor = new Assertion();
+        addRuleToAnalyze(assertionProcessor);
 
-        // Create a rule
-        final Assertion rule1 = new Assertion();
-
-        // run the rules
-        addRuleToAnalyze(rule1);
-
+        // Return the paths of test files with assertions
+        return new ArrayList<>(assertionProcessor.getTestFilePaths());
     }
+
     /**
      *
      * @param rule: add your rule
