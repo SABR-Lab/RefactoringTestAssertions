@@ -14,19 +14,15 @@ import org.refactoringminer.util.GitServiceImpl;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-/*  Things to do for this file:
- *  1. Have to make it utility (static methods, etc)
- *  2. Need to implement refactoring miner and git checkout
- *  3. Make method to get repo paths?
- *
- */
-
-public final class TraverseCommit {
+public class TraverseCommit {
     private final Git git;
     private final String baseRepoPath;
-
+    private final Map<String, String> fileToRefactoringsMap;
 
     public TraverseCommit(String repoPath) throws Exception {
         System.out.println("[DEBUG] Opening Git repository at: " + repoPath);
@@ -37,80 +33,182 @@ public final class TraverseCommit {
                 .findGitDir()
                 .build();
         this.git = new Git(repository);
+        this.fileToRefactoringsMap = new ConcurrentHashMap<>();
         System.out.println("[DEBUG] Repository successfully opened.");
     }
 
-
-    // Uses JGIT to get commit IDs for test files
+    /**
+     * Get commit IDs for test files using JGit
+     */
     public List<String> getCommitIdsForTestFiles(List<String> testFiles) throws GitAPIException {
         List<String> commitIds = new ArrayList<>();
         System.out.println("[DEBUG] Fetching commit history for test files...");
 
-        // Loop through each test file and get its commit history
         for (String fullFilePath : testFiles) {
-            // Shorten the file path
             String relativeFilePath = getRelativeFilePath(fullFilePath);
-            System.out.println("[DEBUG] Checking comit history for: " + relativeFilePath);
-            Iterable<RevCommit> commits = git.log().addPath(relativeFilePath).call();
-            for (RevCommit commit : commits) {
-                commitIds.add(commit.getId().getName());
-                System.out.println("[DEBUG] Found commit ID: " + commit.getId().getName() + " for file: " + relativeFilePath);
+            System.out.println("[DEBUG] Checking commit history for: " + relativeFilePath);
+            try {
+                Iterable<RevCommit> commits = git.log().addPath(relativeFilePath).call();
+                for (RevCommit commit : commits) {
+                    String commitId = commit.getId().getName();
+                    commitIds.add(commitId);
+                    System.out.println("[DEBUG] Found commit ID: " + commitId + " for file: " + relativeFilePath);
+                }
+            } catch (Exception e) {
+                System.err.println("[ERROR] Failed to get commits for " + relativeFilePath + ": " + e.getMessage());
             }
         }
         return commitIds;
     }
 
+    /**
+     * Get file path relative to the repository root
+     */
     public String getRelativeFilePath(String fullFilePath) {
         // Remove the base repository path from the full file path
-        return fullFilePath.replace(baseRepoPath, "");
+        String relativePath = fullFilePath.replace(baseRepoPath, "");
+
+        // Normalize path separators for cross-platform compatibility
+        relativePath = relativePath.replace('\\', '/');
+
+        // Remove leading slash if present
+        if (relativePath.startsWith("/")) {
+            relativePath = relativePath.substring(1);
+        }
+
+        return relativePath;
+    }
+
+    /**
+     * Get all refactorings from the commits that touched this file,
+     * not just the ones affecting the file itself
+     */
+    public String getRefactoringsForCommits(List<String> commitIds, String filePath) throws Exception {
+        if (commitIds.isEmpty()) {
+            System.out.println("[ERROR] No commits found for file: " + filePath);
+            return "No commits found for this file";
+        }
+
+        StringBuilder refactoringsBuilder = new StringBuilder();
+        String relativePath = getRelativeFilePath(filePath);
+
+        System.out.println("\n==============================================================");
+        System.out.println("COLLECTING ALL REFACTORINGS FOR: " + filePath);
+        System.out.println("Relative path: " + relativePath);
+        System.out.println("Found " + commitIds.size() + " commits");
+        for (String id : commitIds) {
+            System.out.println("  - " + id);
+        }
+
+        // Configure RefactoringMiner
+        GitService gitService = new GitServiceImpl();
+        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
+        Repository repo = git.getRepository();
+
+        // Only check for the first 3 commits for performance
+        int commitLimit = Math.min(commitIds.size(), 3);
+        List<String> limitedCommits = commitIds.subList(0, commitLimit);
+
+        System.out.println("Analyzing " + commitLimit + " commits for refactorings");
+
+
+        // Process each commit to find refactorings
+        for (String commitId : limitedCommits) {
+            System.out.println("Checking commit: " + commitId);
+            final boolean[] foundInThisCommit = {false};
+
+            miner.detectAtCommit(repo, commitId, new RefactoringHandler() {
+                @Override
+                public void handle(String currentCommitId, List<Refactoring> refactorings) {
+                    System.out.println("  Found " + refactorings.size() + " total refactorings in this commit");
+
+                    if (refactorings.isEmpty()) {
+                        return;
+                    }
+
+                    foundInThisCommit[0] = true;
+
+                    // Include ALL refactorings from this commit (up to a reasonable limit)
+                    int refLimit = Math.min(refactorings.size(), 20); // Limit to first 20 refactorings
+                    for (int i = 0; i < refLimit; i++) {
+                        Refactoring ref = refactorings.get(i);
+                        String refName = ref.getName();
+
+                        // Add refactoring details (for all refactorings, not just those matching the file)
+                        String refEntry = "Commit: " + currentCommitId.substring(0, 8) + " - " + refName + "\n";
+                        refactoringsBuilder.append(refEntry);
+                        System.out.println("    ADDED TO RESULTS: " + refEntry.trim());
+                    }
+
+                    if (refactorings.size() > refLimit) {
+                        refactoringsBuilder.append("... and " + (refactorings.size() - refLimit) +
+                                " more refactorings in this commit\n");
+                    }
+                }
+            });
+
+            if (!foundInThisCommit[0]) {
+                System.out.println("  No refactorings found in this commit");
+            }
+        }
+
+        String result = refactoringsBuilder.toString();
+        if (result.isEmpty()) {
+            System.out.println("NO REFACTORINGS FOUND IN ANY COMMITS FOR THIS FILE");
+            System.out.println("==============================================================\n");
+            return "No refactorings found";
+        } else {
+            System.out.println("FOUND REFACTORINGS IN COMMITS ASSOCIATED WITH THIS FILE:");
+            System.out.println(result);
+            System.out.println("==============================================================\n");
+            return result;
+        }
     }
 
 
-    public String refactoringMinerOutput(List<String> testFiles) throws Exception {
-        // Use getCommitIdsForTestFiles method to store it in a variable
-        List<String> commitIDs = getCommitIdsForTestFiles(testFiles);
 
-        // Use string builder to store output of each commit ID
+    /**
+     * Original method for full refactoring analysis (kept as a guideline for the method above)
+     */
+    public String refactoringMinerOutput(List<String> testFiles) throws Exception {
         StringBuilder output = new StringBuilder();
 
-        // Start implementation of refactoring miner
+        // Get commit IDs for all test files
+        List<String> commitIDs = getCommitIdsForTestFiles(testFiles);
+
+        if (commitIDs.isEmpty()) {
+            System.out.println("[WARNING] No commits found for the provided test files");
+            return "No refactorings found";
+        }
+
+        // Configure RefactoringMiner
         GitService gitService = new GitServiceImpl();
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        Repository repo = gitService.cloneIfNotExists("temp/ambari", "https://github.com/apache/ambari.git");
-        // Iterate through list of commit IDs and use refactoring miner on each
+        Repository repo = git.getRepository();
+
+        // Analyze each commit for refactorings
         for (String commitId : commitIDs) {
-            output.append("Refactoring Miner output for commit ").append(commitIDs).append("is:");
+            output.append("Analyzing refactorings in commit: ").append(commitId).append("\n");
+
             miner.detectAtCommit(repo, commitId, new RefactoringHandler() {
                 @Override
-                public void handle(String commitId, List<Refactoring> refactorings) {
-                    for (Refactoring ref: refactorings) {
+                public void handle(String currentCommitId, List<Refactoring> refactorings) {
+                    if (refactorings.isEmpty()) {
+                        output.append("No refactorings found in commit ").append(currentCommitId).append("\n");
+                        return;
+                    }
+
+                    output.append("Found ").append(refactorings.size())
+                            .append(" refactorings in commit ").append(currentCommitId).append("\n");
+
+                    // Process each refactoring
+                    for (Refactoring ref : refactorings) {
                         output.append(ref.toString()).append("\n");
                     }
-                    System.out.println(output.toString());
                 }
             });
         }
-        repo.close();
         return output.toString();
     }
 
-
-    public static void main(String[] args) {
-        String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/ambari/";
-
-        try {
-            List<String> testFiles = JavaFileAnalyzer.analyzeTests();
-            TraverseCommit traverseCommit = new TraverseCommit(repoPath);
-
-            // Get refactoringMiner output
-            String refactorings = traverseCommit.refactoringMinerOutput(testFiles);
-            System.out.println("Final Refactoring Output: \n" + refactorings);
-
-            List<String> commitIds = traverseCommit.getCommitIdsForTestFiles(testFiles);
-            System.out.println("Commit IDs related to test files:");
-            commitIds.forEach(System.out::println);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
