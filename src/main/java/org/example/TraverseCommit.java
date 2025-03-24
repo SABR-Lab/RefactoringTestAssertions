@@ -1,7 +1,6 @@
 package org.example;
 
 import org.eclipse.jgit.api.Git;
-import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
@@ -14,7 +13,6 @@ import org.refactoringminer.util.GitServiceImpl;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -40,7 +38,7 @@ public class TraverseCommit {
     /**
      * Get commit IDs for test files using JGit
      */
-    public List<String> getCommitIdsForTestFiles(List<String> testFiles) throws GitAPIException {
+    public List<String> getCommitIdsForTestFiles(List<String> testFiles) {
         List<String> commitIds = new ArrayList<>();
         System.out.println("[DEBUG] Fetching commit history for test files...");
 
@@ -83,7 +81,7 @@ public class TraverseCommit {
      * Get all refactorings from the commits that touched this file,
      * not just the ones affecting the file itself
      */
-    public String getRefactoringsForCommits(List<String> commitIds, String filePath) throws Exception {
+    public String getRefactoringsForCommits(List<String> commitIds, String filePath) {
         if (commitIds.isEmpty()) {
             System.out.println("[ERROR] No commits found for file: " + filePath);
             return "No commits found for this file";
@@ -105,8 +103,8 @@ public class TraverseCommit {
         GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
         Repository repo = git.getRepository();
 
-        // Only check for the first 3 commits for performance
-        int commitLimit = Math.min(commitIds.size(), 3);
+        // Only check for the first commit for performance
+        int commitLimit = Math.min(commitIds.size(), 1);
         List<String> limitedCommits = commitIds.subList(0, commitLimit);
 
         System.out.println("Analyzing " + commitLimit + " commits for refactorings");
@@ -127,17 +125,17 @@ public class TraverseCommit {
                     }
 
                     foundInThisCommit[0] = true;
+                    refactoringsBuilder.append("# Refactorings in commit ").append(currentCommitId).append("\n\n");
 
                     // Include ALL refactorings from this commit (up to a reasonable limit)
                     int refLimit = Math.min(refactorings.size(), 20); // Limit to first 20 refactorings
                     for (int i = 0; i < refLimit; i++) {
                         Refactoring ref = refactorings.get(i);
-                        String refName = ref.getName();
+                        String refDetails = ref.toString();
 
                         // Add refactoring details (for all refactorings, not just those matching the file)
-                        String refEntry = "Commit: " + currentCommitId.substring(0, 8) + " - " + refName + "\n";
-                        refactoringsBuilder.append(refEntry);
-                        System.out.println("    ADDED TO RESULTS: " + refEntry.trim());
+                        refactoringsBuilder.append("- ").append(refDetails).append("\n\n");
+                        System.out.println("    ADDED TO RESULTS: " + ref.getName());
                     }
 
                     if (refactorings.size() > refLimit) {
@@ -164,51 +162,4 @@ public class TraverseCommit {
             return result;
         }
     }
-
-
-
-    /**
-     * Original method for full refactoring analysis (kept as a guideline for the method above)
-     */
-    public String refactoringMinerOutput(List<String> testFiles) throws Exception {
-        StringBuilder output = new StringBuilder();
-
-        // Get commit IDs for all test files
-        List<String> commitIDs = getCommitIdsForTestFiles(testFiles);
-
-        if (commitIDs.isEmpty()) {
-            System.out.println("[WARNING] No commits found for the provided test files");
-            return "No refactorings found";
-        }
-
-        // Configure RefactoringMiner
-        GitService gitService = new GitServiceImpl();
-        GitHistoryRefactoringMiner miner = new GitHistoryRefactoringMinerImpl();
-        Repository repo = git.getRepository();
-
-        // Analyze each commit for refactorings
-        for (String commitId : commitIDs) {
-            output.append("Analyzing refactorings in commit: ").append(commitId).append("\n");
-
-            miner.detectAtCommit(repo, commitId, new RefactoringHandler() {
-                @Override
-                public void handle(String currentCommitId, List<Refactoring> refactorings) {
-                    if (refactorings.isEmpty()) {
-                        output.append("No refactorings found in commit ").append(currentCommitId).append("\n");
-                        return;
-                    }
-
-                    output.append("Found ").append(refactorings.size())
-                            .append(" refactorings in commit ").append(currentCommitId).append("\n");
-
-                    // Process each refactoring
-                    for (Refactoring ref : refactorings) {
-                        output.append(ref.toString()).append("\n");
-                    }
-                }
-            });
-        }
-        return output.toString();
-    }
-
 }
