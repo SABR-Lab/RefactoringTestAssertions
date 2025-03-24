@@ -101,8 +101,14 @@ public final class Assertion {
     public static List<Integer> getAssertionLineNumbers(CtMethod<?> method) {
         if (method.getBody() != null) {
             return method.getBody().getStatements().stream()
-                    .filter(statement -> statement.toString().startsWith("assert"))
-                    . map(statement -> statement.getPosition().getLine())
+                    .filter(statement -> {
+                        String statementString = statement.toString();
+                        return statementString.contains("assert") ||
+                                statementString.contains("Assert.") ||
+                                statementString.contains("junit.framework.Assert.") ||
+                                statementString.contains("org.junit.Assert");
+                    })
+                    .map(statement -> statement.getPosition().getLine())
                     .filter(line -> line > 0)
                     .distinct()
                     .sorted()
