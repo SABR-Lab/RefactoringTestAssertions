@@ -6,7 +6,7 @@ import java.util.Map;
 public interface OutputService {
 
     /**
-     * Saves test results to a file
+     * Saves individual test result to a file
      * @param filePath Path to save the results
      * @param testResults Map containing test results data
      */
@@ -14,13 +14,13 @@ public interface OutputService {
 
     /**
      * Formats test output data into a structured format
-     * @param methodName Name of the test method
-     * @param body Body content of the test method
-     * @param filePath File path where the test is located
-     * @param annotations Annotations of the test method
-     * @param refactorings Refactorings related to the test
-     * @return Formatted map of test data
      */
     Map<String, Object> formatTestOutput(String methodName, String body, String filePath,
-                                         String annotations, int assertionAmount, String assertionType, List<Integer> assertionLines, String refactorings);
+                                         String annotations, int assertionAmount, String assertionType,
+                                         List<Integer> assertionLines, String commitID);
+
+    /**
+     * Save all test results in the format from paste.txt
+     */
+    void saveAllTestResults(String filePath, Map<String, Map<String, List<Map<String, Object>>>> results);
 }

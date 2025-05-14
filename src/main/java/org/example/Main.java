@@ -1,14 +1,11 @@
 package org.example;
 
-import java.io.FileWriter;
-
 public class Main {
     public static void main(String[] args) {
         try {
             // Parse command line arguments
-            String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/ambari/";
-            String outputFilePath = "combined_analysis_results.json";
-            String singleFilePath = null;
+            String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/temp/commons-lang/";
+            String outputFilePath = "test_method_evolution_for_commonlang.json";
 
             // Check for command line arguments
             if (args.length > 0) {
@@ -17,50 +14,24 @@ public class Main {
                         repoPath = args[i + 1];
                     } else if (args[i].equals("--output") && i + 1 < args.length) {
                         outputFilePath = args[i + 1];
-                    } else if (args[i].equals("--file") && i + 1 < args.length) {
-                        singleFilePath = args[i + 1];
                     }
                 }
             }
 
             System.out.println("Repository path: " + repoPath);
             System.out.println("Output file: " + outputFilePath);
-            if (singleFilePath != null) {
-                System.out.println("Analyzing single file: " + singleFilePath);
-            }
 
-            // Initialize output file with a JSON array opener
-            try (FileWriter writer = new FileWriter(outputFilePath)) {
-                writer.write("[\n");
-            }
-
-            // Set up dependencies
-            OutputService outputService = new OutputServiceImpl();
+            // Store original branch
             TraverseCommit traverseCommit = new TraverseCommit(repoPath);
+            String originalBranch = traverseCommit.getCurrentBranch();
+            System.out.println("Current branch: " + originalBranch);
 
-            // Initialize the analyzer with dependencies
+            // Set up services
+            OutputService outputService = new OutputServiceImpl();
+
+            // Create and run analyzer
             JavaFileAnalyzer analyzer = new JavaFileAnalyzer(outputService, traverseCommit, outputFilePath);
-
-            // Run the analysis on a single file or the whole repository
-            if (singleFilePath != null) {
-                analyzer.analyze(singleFilePath);
-            } else {
-                analyzer.analyze(repoPath);
-            }
-
-            // Close the JSON array
-            try (FileWriter writer = new FileWriter(outputFilePath, true)) {
-                // Remove the trailing comma if it exists
-                java.nio.file.Path path = java.nio.file.Paths.get(outputFilePath);
-                String content = java.nio.file.Files.readString(path);
-                if (content.endsWith(",\n")) {
-                    // Rewrite the file without the trailing comma
-                    content = content.substring(0, content.length() - 2) + "\n";
-                    java.nio.file.Files.writeString(path, content);
-                }
-
-                writer.write("]");
-            }
+            analyzer.analyzeTestEvolution(repoPath, originalBranch);
 
             System.out.println("Analysis completed successfully. Results saved to: " + outputFilePath);
 
