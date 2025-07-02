@@ -3,5 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/main/resources/ambari" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/temp/commons-lang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tmp/refactoring-toy-example" vcs="Git" />
   </component>
 </project>
