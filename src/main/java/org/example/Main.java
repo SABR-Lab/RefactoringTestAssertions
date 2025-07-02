@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Parse command line arguments
-            String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/temp/commons-lang/";
-            String outputFilePath = "test_method_evolution_for_commonlang.json";
+            String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/ambari/";
+            String outputFilePath = "test_method_evolution_for_ambari_test.json";
 
             // Check for command line arguments
             if (args.length > 0) {
