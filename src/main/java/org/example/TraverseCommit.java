@@ -148,9 +148,11 @@ public class TraverseCommit {
     /**
     * Get the timestamp of each commit
      */
+    /**
     public String commitTime(String commitID) {
         try {
 
         }
     }
+     **/
 }
