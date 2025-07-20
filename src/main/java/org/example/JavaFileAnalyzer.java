@@ -15,11 +15,13 @@ public class JavaFileAnalyzer {
     private final OutputService outputService;
     private final TraverseCommit traverseCommit;
     private final String outputFilePath;
+    private final TestMethodAnalyzer diffAnalyzer; // NEW: Add diff analyzer
 
     public JavaFileAnalyzer(OutputService outputService, TraverseCommit traverseCommit, String outputFilePath) {
         this.outputService = outputService;
         this.traverseCommit = traverseCommit;
         this.outputFilePath = outputFilePath;
+        this.diffAnalyzer = new TestMethodAnalyzer(); // NEW: Initialize diff analyzer
     }
 
     public void analyzeTestEvolution(String repositoryPath, String originalBranch) {
@@ -96,8 +98,12 @@ public class JavaFileAnalyzer {
             // Restore original branch
             traverseCommit.restoreOriginalBranch(originalBranch);
 
-            // Save results to file
+            // Save initial results to file
             outputService.saveAllTestResults(outputFilePath, allResults);
+
+            // NEW: Automatically run diff analysis and create chunks
+            System.out.println("\n=== Starting Automated Diff Analysis ===");
+            diffAnalyzer.analyzeAndCreateChunks(outputFilePath);
 
         } catch (Exception e) {
             System.err.println("Error in analyzeTestEvolution: " + e.getMessage());

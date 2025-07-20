@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             // Parse command line arguments
-            String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/ambari/";
-            String outputFilePath = "test_method_evolution_for_ambari_test.json";
+            String repoPath = "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-lang/";
+            String outputFilePath = "test_method_evolution_for_commons-lang_automated.json";
 
             // Check for command line arguments
             if (args.length > 0) {
@@ -18,6 +18,7 @@ public class Main {
                 }
             }
 
+            System.out.println("=== AUTOMATED TEST METHOD ANALYSIS PIPELINE ===");
             System.out.println("Repository path: " + repoPath);
             System.out.println("Output file: " + outputFilePath);
 
@@ -31,12 +32,23 @@ public class Main {
 
             // Create and run analyzer
             JavaFileAnalyzer analyzer = new JavaFileAnalyzer(outputService, traverseCommit, outputFilePath);
+
+            System.out.println("\n=== PHASE 1: Collecting Test Method Evolution Data ===");
             analyzer.analyzeTestEvolution(repoPath, originalBranch);
 
-            System.out.println("Analysis completed successfully. Results saved to: " + outputFilePath);
+            System.out.println("\n=== PIPELINE COMPLETE ===");
+            System.out.println("Generated files:");
+            System.out.println("1. " + outputFilePath + " - Raw test method evolution");
+            System.out.println("2. " + outputFilePath.replace(".json", "_with_diffs.json") + " - Enhanced with diff analysis");
+            System.out.println("3. " + outputFilePath.replace(".json", "_chunks.json") + " - RAG-ready chunks");
+
+            System.out.println("\nNext steps:");
+            System.out.println("- Review the chunks file for RAG system");
+            System.out.println("- Set up ChromaDB to store chunks");
+            System.out.println("- Build retrieval system with Mistral embeddings");
 
         } catch (Exception e) {
-            System.err.println("Error in analysis process: " + e.getMessage());
+            System.err.println("Error in analysis pipeline: " + e.getMessage());
             e.printStackTrace();
         }
     }
