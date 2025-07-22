@@ -6,11 +6,17 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class TraverseCommit {
     private final Git git;
     private final String baseRepoPath;
+
+    // NEW: For the JProfiler impl
+    private final String jprofilerHome;
+    private final String profileDataDir;
 
     public TraverseCommit(String repoPath) throws Exception {
         System.out.println("[DEBUG] Opening Git repository at: " + repoPath);
@@ -22,6 +28,83 @@ public class TraverseCommit {
                 .build();
         this.git = new Git(repository);
         System.out.println("[DEBUG] Repository successfully opened.");
+
+        // NEW: FOR JPROFILER
+        this.jprofilerHome = System.getenv("JPROFILER_HOME");
+        this.profileDataDir = repoPath + "/jprofiler-data";
+        createProfileDataDirectory();
+    }
+
+    // NEW: For JProfiler
+    public void createProfileDataDirectory() throws IOException {
+        Files.createDirectories(Paths.get(profileDataDir));
+    }
+
+    /**
+     *  NEW: JProfiler Impl
+     * Runs Assertion tests and traces them
+     */
+    public AssertionTraceResults runTestsWithProfiling(String commitId, String testFilePath) {
+        try {
+            String profileFile = profileDataDir + "/trace_" + commitId + ".jps";
+
+            // Make command
+            String[] command = buildProfilerCommand(testFilePath, profileFile);
+
+            // Execute
+            ProcessBuilder pb = new ProcessBuilder(command);
+            pb.directory(new File(baseRepoPath));
+            pb.redirectErrorStream(true);
+
+            Process process = pb.start();
+            String output = readProcessOutput(process);
+            int exitCode = process.waitFor();
+
+            if (exitCode == 0) {
+                return extractAssertionTraces(profileFile, commitId);
+            } else {
+                System.err.println("Test execution failed: " + output);
+                return new AssertionTraceResults(commitId, new ArrayList<>());
+            }
+
+        } catch (Exception e) {
+            System.err.println("Error running tests with profiling: " + e.getMessage());
+            return new AssertionTraceResults(commitId, new ArrayList<>());
+        }
+    }
+
+    /** NEW: JProfiler impl
+     *
+     */
+    private String[] buildProfilerCommand(String testFilePath, String profileFile) {
+        List<String> command = new ArrayList<>();
+
+        // JProfiler
+        command.add("java");
+        command.add("-agentpath:" + jprofilerHome + "/bin/libjprofilerti.so=port8849");
+        command.add("-Djprofiler.config=" + baseRepoPath + "/jprofiler-config.xml");
+        command.add("-Djprofiler.saveOnExit=" + profileFile);
+
+        // Maven part
+        if (Files.exists(Paths.get(baseRepoPath, "pom.xml"))) {
+            return buildMavenCommand(command, testFilePath);
+        } else if (Files.exists(Paths.get(baseRepoPath, "build.gradle"))) {
+            return buildMavenCommand(command, testFilePath);
+        } else {
+            throw new RuntimeException("No maven file found");
+        }
+    }
+
+    /** NEW: JProfiler impl
+     *
+     */
+    private String[] buildMavenCommand(List<String> baseCommand, String testFilePath) {
+        List<String> mavenCommand = Arrays.asList(
+                "mvn", "test",
+                "-Dtest=" + extractTestClassName(testFilePath),
+                "-DjvmArgs=" + String.join(" ", baseCommand.subList(1, baseCommand.size()))
+        );
+        return mavenCommand.toArray(new String[0]);
     }
 
     /**

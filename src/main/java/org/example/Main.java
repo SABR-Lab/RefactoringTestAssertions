@@ -36,16 +36,11 @@ public class Main {
             System.out.println("\n=== PHASE 1: Collecting Test Method Evolution Data ===");
             analyzer.analyzeTestEvolution(repoPath, originalBranch);
 
-            System.out.println("\n=== PIPELINE COMPLETE ===");
+            System.out.println("\n=== COMPLETED Step One ===");
             System.out.println("Generated files:");
             System.out.println("1. " + outputFilePath + " - Raw test method evolution");
             System.out.println("2. " + outputFilePath.replace(".json", "_with_diffs.json") + " - Enhanced with diff analysis");
             System.out.println("3. " + outputFilePath.replace(".json", "_chunks.json") + " - RAG-ready chunks");
-
-            System.out.println("\nNext steps:");
-            System.out.println("- Review the chunks file for RAG system");
-            System.out.println("- Set up ChromaDB to store chunks");
-            System.out.println("- Build retrieval system with Mistral embeddings");
 
         } catch (Exception e) {
             System.err.println("Error in analysis pipeline: " + e.getMessage());

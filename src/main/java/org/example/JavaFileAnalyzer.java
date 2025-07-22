@@ -15,13 +15,15 @@ public class JavaFileAnalyzer {
     private final OutputService outputService;
     private final TraverseCommit traverseCommit;
     private final String outputFilePath;
-    private final TestMethodAnalyzer diffAnalyzer; // NEW: Add diff analyzer
+    // NEW: Add diff analyzer (for sake of remembering what changed)
+    private final TestMethodAnalyzer diffAnalyzer;
 
     public JavaFileAnalyzer(OutputService outputService, TraverseCommit traverseCommit, String outputFilePath) {
         this.outputService = outputService;
         this.traverseCommit = traverseCommit;
         this.outputFilePath = outputFilePath;
-        this.diffAnalyzer = new TestMethodAnalyzer(); // NEW: Initialize diff analyzer
+        // NEW: Initialize diff analyzer
+        this.diffAnalyzer = new TestMethodAnalyzer();
     }
 
     public void analyzeTestEvolution(String repositoryPath, String originalBranch) {
