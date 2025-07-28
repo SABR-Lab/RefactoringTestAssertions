@@ -1,0 +1,2984 @@
+[
+  {
+    "chunkId": "testIsValid_a6a231b8be13d6244ffb1b877895b00c68f83684_to_a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/routines/UrlValidatorTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "afterCommit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "beforeState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.50646805E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.11723535E8,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@ad454"
+          ],
+          "actualValue": "SomeObject@ad454",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.5504311E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.5504311E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.50646805E8,
+        "performance_variance": 1.35142494E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final long options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "afterState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.29441247E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 7.3865438E7,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@25069"
+          ],
+          "actualValue": "SomeObject@25069",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.5566864E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        }
+      ],
+      "assertion_lines": [
+        178.0,
+        179.0,
+        185.0
+      ],
+      "commit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 0 to 3",
+          "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "New assertion type: assertTrue",
+          "New assertion type: assertEquals"
+        ],
+        "importChanges": [
+          "New usage: org.apache.commons.validator.routines.UrlValidator",
+          "New usage: java.lang.StringBuilder",
+          "New usage: java.lang.String"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 0 to 2",
+          "Statement count changed from 4 to 8",
+          "Control flow \u0027if\u0027 usage changed from 0 to 6",
+          "Control flow \u0027else\u0027 usage changed from 0 to 2",
+          "Control flow \u0027for\u0027 usage changed from 0 to 1",
+          "Control flow \u0027while\u0027 usage changed from 0 to 1"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final long options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.5566864E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.29441247E8,
+        "performance_variance": 1.13874383E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final long options) {\n    final org.apache.commons.validator.routines.UrlValidator urlVal \u003d new org.apache.commons.validator.routines.UrlValidator(null, null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 0 to 3",
+        "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "New assertion type: assertTrue",
+        "New assertion type: assertEquals"
+      ],
+      "importChanges": [
+        "New usage: org.apache.commons.validator.routines.UrlValidator",
+        "New usage: java.lang.StringBuilder",
+        "New usage: java.lang.String"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 0 to 2",
+        "Statement count changed from 4 to 8",
+        "Control flow \u0027if\u0027 usage changed from 0 to 6",
+        "Control flow \u0027else\u0027 usage changed from 0 to 2",
+        "Control flow \u0027for\u0027 usage changed from 0 to 1",
+        "Control flow \u0027while\u0027 usage changed from 0 to 1"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 0 to 3",
+        "Added",
+        "New assertion type"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_a6a231b8be13d6244ffb1b877895b00c68f83684_to_30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/routines/UrlValidatorTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "afterCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "beforeState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.29441247E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 7.3865438E7,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@25069"
+          ],
+          "actualValue": "SomeObject@25069",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.5566864E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        }
+      ],
+      "assertion_lines": [
+        178.0,
+        179.0,
+        185.0
+      ],
+      "commit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final long options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.5566864E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.29441247E8,
+        "performance_variance": 1.13874383E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final long options) {\n    final org.apache.commons.validator.routines.UrlValidator urlVal \u003d new org.apache.commons.validator.routines.UrlValidator(null, null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "afterState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 7.9367689E7,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.28788723E8,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@44ac8"
+          ],
+          "actualValue": "SomeObject@44ac8",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.9705723E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.27171346E8,
+          "testMethodName": "testDeleteUrlValidator_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.15050632E8,
+          "testMethodName": "testValidateUrlValidator_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 3 to 0",
+          "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "Assertion type assertTrue count changed from 2 to 0",
+          "Assertion type assertEquals count changed from 1 to 0"
+        ],
+        "importChanges": [
+          "Removed usage: org.apache.commons.validator.routines.UrlValidator",
+          "Removed usage: java.lang.StringBuilder",
+          "Removed usage: java.lang.String"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 2 to 0",
+          "Statement count changed from 8 to 4",
+          "Control flow \u0027if\u0027 usage changed from 6 to 0",
+          "Control flow \u0027else\u0027 usage changed from 2 to 0",
+          "Control flow \u0027for\u0027 usage changed from 1 to 0",
+          "Control flow \u0027while\u0027 usage changed from 1 to 0"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.9705723E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.28788723E8,
+        "performance_variance": 1.09083E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final long options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 3 to 0",
+        "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "importChanges": [
+        "Removed usage: org.apache.commons.validator.routines.UrlValidator",
+        "Removed usage: java.lang.StringBuilder",
+        "Removed usage: java.lang.String"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 2 to 0",
+        "Statement count changed from 8 to 4",
+        "Control flow \u0027if\u0027 usage changed from 6 to 0",
+        "Control flow \u0027else\u0027 usage changed from 2 to 0",
+        "Control flow \u0027for\u0027 usage changed from 1 to 0",
+        "Control flow \u0027while\u0027 usage changed from 1 to 0"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 3 to 0",
+        "Removed",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_30327416cb186ebd2cc08f3c7021f19cefa82e2e_to_30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/routines/UrlValidatorTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "afterCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "beforeState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 7.9367689E7,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.28788723E8,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@44ac8"
+          ],
+          "actualValue": "SomeObject@44ac8",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.9705723E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.27171346E8,
+          "testMethodName": "testDeleteUrlValidator_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.15050632E8,
+          "testMethodName": "testValidateUrlValidator_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.9705723E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.28788723E8,
+        "performance_variance": 1.09083E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final long options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "afterState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.88534932E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 5.1708014E7,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@d617f"
+          ],
+          "actualValue": "SomeObject@d617f",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.0110749E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.58880619E8,
+          "testMethodName": "testDeleteUrlValidator_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 8.1394422E7,
+          "testMethodName": "testValidateUrlValidator_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [
+        177.0,
+        178.0,
+        184.0
+      ],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 0 to 3",
+          "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "New assertion type: assertTrue",
+          "New assertion type: assertEquals"
+        ],
+        "importChanges": [
+          "New usage: org.apache.commons.validator.routines.UrlValidator",
+          "New usage: java.lang.StringBuilder",
+          "New usage: java.lang.String"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 0 to 2",
+          "Statement count changed from 4 to 8",
+          "Control flow \u0027if\u0027 usage changed from 0 to 6",
+          "Control flow \u0027else\u0027 usage changed from 0 to 2",
+          "Control flow \u0027for\u0027 usage changed from 0 to 1",
+          "Control flow \u0027while\u0027 usage changed from 0 to 1"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final long options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.0110749E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.88534932E8,
+        "performance_variance": 1.78424183E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final long options) {\n    final org.apache.commons.validator.routines.UrlValidator urlVal \u003d new org.apache.commons.validator.routines.UrlValidator(null, null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 0 to 3",
+        "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "New assertion type: assertTrue",
+        "New assertion type: assertEquals"
+      ],
+      "importChanges": [
+        "New usage: org.apache.commons.validator.routines.UrlValidator",
+        "New usage: java.lang.StringBuilder",
+        "New usage: java.lang.String"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 0 to 2",
+        "Statement count changed from 4 to 8",
+        "Control flow \u0027if\u0027 usage changed from 0 to 6",
+        "Control flow \u0027else\u0027 usage changed from 0 to 2",
+        "Control flow \u0027for\u0027 usage changed from 0 to 1",
+        "Control flow \u0027while\u0027 usage changed from 0 to 1"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 0 to 3",
+        "Added",
+        "New assertion type"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_30327416cb186ebd2cc08f3c7021f19cefa82e2e_to_35524402bcd43697f0949e1234532c2a729610ac",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/routines/UrlValidatorTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "afterCommit": "35524402bcd43697f0949e1234532c2a729610ac",
+    "beforeState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.88534932E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 5.1708014E7,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@d617f"
+          ],
+          "actualValue": "SomeObject@d617f",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.0110749E7,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.58880619E8,
+          "testMethodName": "testDeleteUrlValidator_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 8.1394422E7,
+          "testMethodName": "testValidateUrlValidator_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [
+        177.0,
+        178.0,
+        184.0
+      ],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final long options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.0110749E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.88534932E8,
+        "performance_variance": 1.78424183E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final long options) {\n    final org.apache.commons.validator.routines.UrlValidator urlVal \u003d new org.apache.commons.validator.routines.UrlValidator(null, null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "afterState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.8823438E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.35256455E8,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@3fd67"
+          ],
+          "actualValue": "SomeObject@3fd67",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.91442327E8,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 9.9576105E7,
+          "testMethodName": "testDeleteUrlValidator_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.67230428E8,
+          "testMethodName": "testValidateUrlValidator_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "35524402bcd43697f0949e1234532c2a729610ac",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 3 to 0",
+          "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "Assertion type assertTrue count changed from 2 to 0",
+          "Assertion type assertEquals count changed from 1 to 0"
+        ],
+        "importChanges": [
+          "Removed usage: org.apache.commons.validator.routines.UrlValidator",
+          "Removed usage: java.lang.StringBuilder",
+          "Removed usage: java.lang.String"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 2 to 0",
+          "Statement count changed from 8 to 4",
+          "Control flow \u0027if\u0027 usage changed from 6 to 0",
+          "Control flow \u0027else\u0027 usage changed from 2 to 0",
+          "Control flow \u0027for\u0027 usage changed from 1 to 0",
+          "Control flow \u0027while\u0027 usage changed from 1 to 0"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 9.9576105E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.91442327E8,
+        "performance_variance": 9.1866222E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final long options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 3 to 0",
+        "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "importChanges": [
+        "Removed usage: org.apache.commons.validator.routines.UrlValidator",
+        "Removed usage: java.lang.StringBuilder",
+        "Removed usage: java.lang.String"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 2 to 0",
+        "Statement count changed from 8 to 4",
+        "Control flow \u0027if\u0027 usage changed from 6 to 0",
+        "Control flow \u0027else\u0027 usage changed from 2 to 0",
+        "Control flow \u0027for\u0027 usage changed from 1 to 0",
+        "Control flow \u0027while\u0027 usage changed from 1 to 0"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 3 to 0",
+        "Removed",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_35524402bcd43697f0949e1234532c2a729610ac_to_35524402bcd43697f0949e1234532c2a729610ac",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/routines/UrlValidatorTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "35524402bcd43697f0949e1234532c2a729610ac",
+    "afterCommit": "35524402bcd43697f0949e1234532c2a729610ac",
+    "beforeState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.8823438E8,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.35256455E8,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@3fd67"
+          ],
+          "actualValue": "SomeObject@3fd67",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.91442327E8,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 9.9576105E7,
+          "testMethodName": "testDeleteUrlValidator_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.67230428E8,
+          "testMethodName": "testValidateUrlValidator_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "35524402bcd43697f0949e1234532c2a729610ac",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 9.9576105E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.91442327E8,
+        "performance_variance": 9.1866222E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final long options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "afterState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 2.9002769E7,
+          "testMethodName": "testUrlValidator",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.54392963E8,
+          "testMethodName": "testCreateUrlValidator_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@ee6a7"
+          ],
+          "actualValue": "SomeObject@ee6a7",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.37919779E8,
+          "testMethodName": "testUpdateUrlValidator_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlValidatorTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        }
+      ],
+      "assertion_lines": [
+        177.0,
+        178.0,
+        184.0
+      ],
+      "commit": "35524402bcd43697f0949e1234532c2a729610ac",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 0 to 3",
+          "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "New assertion type: assertTrue",
+          "New assertion type: assertEquals"
+        ],
+        "importChanges": [
+          "New usage: org.apache.commons.validator.routines.UrlValidator",
+          "New usage: java.lang.StringBuilder",
+          "New usage: java.lang.String"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 0 to 2",
+          "Statement count changed from 4 to 8",
+          "Control flow \u0027if\u0027 usage changed from 0 to 6",
+          "Control flow \u0027else\u0027 usage changed from 0 to 2",
+          "Control flow \u0027for\u0027 usage changed from 0 to 1",
+          "Control flow \u0027while\u0027 usage changed from 0 to 1"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final long options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 2.9002769E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.54392963E8,
+        "performance_variance": 1.25390194E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final long options) {\n    final org.apache.commons.validator.routines.UrlValidator urlVal \u003d new org.apache.commons.validator.routines.UrlValidator(null, null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.routines.UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 0 to 3",
+        "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlValidatorTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "New assertion type: assertTrue",
+        "New assertion type: assertEquals"
+      ],
+      "importChanges": [
+        "New usage: org.apache.commons.validator.routines.UrlValidator",
+        "New usage: java.lang.StringBuilder",
+        "New usage: java.lang.String"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 0 to 2",
+        "Statement count changed from 4 to 8",
+        "Control flow \u0027if\u0027 usage changed from 0 to 6",
+        "Control flow \u0027else\u0027 usage changed from 0 to 2",
+        "Control flow \u0027for\u0027 usage changed from 0 to 1",
+        "Control flow \u0027while\u0027 usage changed from 0 to 1"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 0 to 3",
+        "Added",
+        "New assertion type"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_a6a231b8be13d6244ffb1b877895b00c68f83684_to_a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/UrlTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "afterCommit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "beforeState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.17023699E8,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.8226166E7,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@844fe"
+          ],
+          "actualValue": "SomeObject@844fe",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 2.478114E7,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 6.1355256E7,
+          "testMethodName": "testDeleteUrl_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 4.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 4.0
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.8226166E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.17023699E8,
+        "performance_variance": 9.8797533E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final int options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "afterState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 2.5638638E7,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.60273225E8,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@1a01f"
+          ],
+          "actualValue": "SomeObject@1a01f",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.28471565E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 4.5393069E7,
+          "testMethodName": "testDeleteUrl_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.89990154E8,
+          "testMethodName": "testValidateUrl_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        }
+      ],
+      "assertion_lines": [
+        134.0,
+        135.0,
+        141.0
+      ],
+      "commit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 0 to 3",
+          "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "New assertion type: assertTrue",
+          "New assertion type: assertEquals"
+        ],
+        "importChanges": [
+          "New usage: java.lang.StringBuilder",
+          "New usage: java.lang.String",
+          "New usage: org.apache.commons.validator.UrlValidator"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 0 to 2",
+          "Statement count changed from 4 to 8",
+          "Control flow \u0027if\u0027 usage changed from 0 to 6",
+          "Control flow \u0027else\u0027 usage changed from 0 to 2",
+          "Control flow \u0027for\u0027 usage changed from 0 to 1",
+          "Control flow \u0027while\u0027 usage changed from 0 to 1"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final int options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 2.5638638E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.89990154E8,
+        "performance_variance": 1.64351516E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final int options) {\n    final org.apache.commons.validator.UrlValidator urlVal \u003d new org.apache.commons.validator.UrlValidator(null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 0 to 3",
+        "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "New assertion type: assertTrue",
+        "New assertion type: assertEquals"
+      ],
+      "importChanges": [
+        "New usage: java.lang.StringBuilder",
+        "New usage: java.lang.String",
+        "New usage: org.apache.commons.validator.UrlValidator"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 0 to 2",
+        "Statement count changed from 4 to 8",
+        "Control flow \u0027if\u0027 usage changed from 0 to 6",
+        "Control flow \u0027else\u0027 usage changed from 0 to 2",
+        "Control flow \u0027for\u0027 usage changed from 0 to 1",
+        "Control flow \u0027while\u0027 usage changed from 0 to 1"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 0 to 3",
+        "Added",
+        "New assertion type"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_a6a231b8be13d6244ffb1b877895b00c68f83684_to_30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/UrlTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+    "afterCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "beforeState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 2.5638638E7,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.60273225E8,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@1a01f"
+          ],
+          "actualValue": "SomeObject@1a01f",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.28471565E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 4.5393069E7,
+          "testMethodName": "testDeleteUrl_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        },
+        {
+          "executionTimeNs": 1.89990154E8,
+          "testMethodName": "testValidateUrl_4",
+          "assertionType": "assertThrows",
+          "parameters": [
+            "IllegalArgumentException.class",
+            "() -\u003e someMethod()"
+          ],
+          "expectedValue": "IllegalArgumentException.class",
+          "actualValue": "IllegalArgumentException",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 62.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "a6a231b8be13d6244ffb1b877895b00c68f83684"
+          }
+        }
+      ],
+      "assertion_lines": [
+        134.0,
+        135.0,
+        141.0
+      ],
+      "commit": "a6a231b8be13d6244ffb1b877895b00c68f83684",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 5.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0,
+          "assertThrows": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 5.0
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final int options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 2.5638638E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.89990154E8,
+        "performance_variance": 1.64351516E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final int options) {\n    final org.apache.commons.validator.UrlValidator urlVal \u003d new org.apache.commons.validator.UrlValidator(null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "afterState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.26659573E8,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 5.6477946E7,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@add53"
+          ],
+          "actualValue": "SomeObject@add53",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.17880254E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 3 to 0",
+          "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "Assertion type assertTrue count changed from 2 to 0",
+          "Assertion type assertEquals count changed from 1 to 0"
+        ],
+        "importChanges": [
+          "Removed usage: java.lang.StringBuilder",
+          "Removed usage: java.lang.String",
+          "Removed usage: org.apache.commons.validator.UrlValidator"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 2 to 0",
+          "Statement count changed from 8 to 4",
+          "Control flow \u0027if\u0027 usage changed from 6 to 0",
+          "Control flow \u0027else\u0027 usage changed from 2 to 0",
+          "Control flow \u0027for\u0027 usage changed from 1 to 0",
+          "Control flow \u0027while\u0027 usage changed from 1 to 0"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 5.6477946E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.26659573E8,
+        "performance_variance": 7.0181627E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final int options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 3 to 0",
+        "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "importChanges": [
+        "Removed usage: java.lang.StringBuilder",
+        "Removed usage: java.lang.String",
+        "Removed usage: org.apache.commons.validator.UrlValidator"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 2 to 0",
+        "Statement count changed from 8 to 4",
+        "Control flow \u0027if\u0027 usage changed from 6 to 0",
+        "Control flow \u0027else\u0027 usage changed from 2 to 0",
+        "Control flow \u0027for\u0027 usage changed from 1 to 0",
+        "Control flow \u0027while\u0027 usage changed from 1 to 0"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 3 to 0",
+        "Removed",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_30327416cb186ebd2cc08f3c7021f19cefa82e2e_to_30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/UrlTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "afterCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "beforeState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.26659573E8,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 5.6477946E7,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@add53"
+          ],
+          "actualValue": "SomeObject@add53",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.17880254E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 5.6477946E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.26659573E8,
+        "performance_variance": 7.0181627E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final int options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "afterState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.83657859E8,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.78525373E8,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@c34a7"
+          ],
+          "actualValue": "SomeObject@c34a7",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.61995408E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [
+        133.0,
+        134.0,
+        140.0
+      ],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 0 to 3",
+          "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "New assertion type: assertTrue",
+          "New assertion type: assertEquals"
+        ],
+        "importChanges": [
+          "New usage: java.lang.StringBuilder",
+          "New usage: java.lang.String",
+          "New usage: org.apache.commons.validator.UrlValidator"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 0 to 2",
+          "Statement count changed from 4 to 8",
+          "Control flow \u0027if\u0027 usage changed from 0 to 6",
+          "Control flow \u0027else\u0027 usage changed from 0 to 2",
+          "Control flow \u0027for\u0027 usage changed from 0 to 1",
+          "Control flow \u0027while\u0027 usage changed from 0 to 1"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final int options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.61995408E8,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.83657859E8,
+        "performance_variance": 2.1662451E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final int options) {\n    final org.apache.commons.validator.UrlValidator urlVal \u003d new org.apache.commons.validator.UrlValidator(null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 0 to 3",
+        "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "New assertion type: assertTrue",
+        "New assertion type: assertEquals"
+      ],
+      "importChanges": [
+        "New usage: java.lang.StringBuilder",
+        "New usage: java.lang.String",
+        "New usage: org.apache.commons.validator.UrlValidator"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 0 to 2",
+        "Statement count changed from 4 to 8",
+        "Control flow \u0027if\u0027 usage changed from 0 to 6",
+        "Control flow \u0027else\u0027 usage changed from 0 to 2",
+        "Control flow \u0027for\u0027 usage changed from 0 to 1",
+        "Control flow \u0027while\u0027 usage changed from 0 to 1"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 0 to 3",
+        "Added",
+        "New assertion type"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_30327416cb186ebd2cc08f3c7021f19cefa82e2e_to_35524402bcd43697f0949e1234532c2a729610ac",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/UrlTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+    "afterCommit": "35524402bcd43697f0949e1234532c2a729610ac",
+    "beforeState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.83657859E8,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.78525373E8,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@c34a7"
+          ],
+          "actualValue": "SomeObject@c34a7",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        },
+        {
+          "executionTimeNs": 1.61995408E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "30327416cb186ebd2cc08f3c7021f19cefa82e2e"
+          }
+        }
+      ],
+      "assertion_lines": [
+        133.0,
+        134.0,
+        140.0
+      ],
+      "commit": "30327416cb186ebd2cc08f3c7021f19cefa82e2e",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 3.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 3.0
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final int options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.61995408E8,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.83657859E8,
+        "performance_variance": 2.1662451E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final int options) {\n    final org.apache.commons.validator.UrlValidator urlVal \u003d new org.apache.commons.validator.UrlValidator(null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "afterState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.2520265E7,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.3050667E7,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@89e06"
+          ],
+          "actualValue": "SomeObject@89e06",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.57785505E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 2.1152516E7,
+          "testMethodName": "testDeleteUrl_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "35524402bcd43697f0949e1234532c2a729610ac",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 4.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 4.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 3 to 0",
+          "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "Assertion type assertTrue count changed from 2 to 0",
+          "Assertion type assertEquals count changed from 1 to 0"
+        ],
+        "importChanges": [
+          "Removed usage: java.lang.StringBuilder",
+          "Removed usage: java.lang.String",
+          "Removed usage: org.apache.commons.validator.UrlValidator"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 2 to 0",
+          "Statement count changed from 8 to 4",
+          "Control flow \u0027if\u0027 usage changed from 6 to 0",
+          "Control flow \u0027else\u0027 usage changed from 2 to 0",
+          "Control flow \u0027for\u0027 usage changed from 1 to 0",
+          "Control flow \u0027while\u0027 usage changed from 1 to 0"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.2520265E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.57785505E8,
+        "performance_variance": 1.4526524E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final int options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 3 to 0",
+        "Removed: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Removed: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "importChanges": [
+        "Removed usage: java.lang.StringBuilder",
+        "Removed usage: java.lang.String",
+        "Removed usage: org.apache.commons.validator.UrlValidator"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 2 to 0",
+        "Statement count changed from 8 to 4",
+        "Control flow \u0027if\u0027 usage changed from 6 to 0",
+        "Control flow \u0027else\u0027 usage changed from 2 to 0",
+        "Control flow \u0027for\u0027 usage changed from 1 to 0",
+        "Control flow \u0027while\u0027 usage changed from 1 to 0"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 3 to 0",
+        "Removed",
+        "Assertion type assertTrue count changed from 2 to 0",
+        "Assertion type assertEquals count changed from 1 to 0"
+      ],
+      "change_significance": "significant"
+    }
+  },
+  {
+    "chunkId": "testIsValid_35524402bcd43697f0949e1234532c2a729610ac_to_35524402bcd43697f0949e1234532c2a729610ac",
+    "filePath": "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/commons-validator/src/test/java/org/apache/commons/validator/UrlTest.java",
+    "methodName": "testIsValid",
+    "beforeCommit": "35524402bcd43697f0949e1234532c2a729610ac",
+    "afterCommit": "35524402bcd43697f0949e1234532c2a729610ac",
+    "beforeState": {
+      "has_assertions": false,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.2520265E7,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.3050667E7,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@89e06"
+          ],
+          "actualValue": "SomeObject@89e06",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.57785505E8,
+          "testMethodName": "testUpdateUrl_2",
+          "assertionType": "assertTrue",
+          "parameters": [
+            true
+          ],
+          "expectedValue": true,
+          "actualValue": true,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 46.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 2.1152516E7,
+          "testMethodName": "testDeleteUrl_3",
+          "assertionType": "assertFalse",
+          "parameters": [
+            false
+          ],
+          "expectedValue": false,
+          "actualValue": false,
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 54.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        }
+      ],
+      "assertion_lines": [],
+      "commit": "35524402bcd43697f0949e1234532c2a729610ac",
+      "annotations": "@org.junit.jupiter.api.Test",
+      "assertion_amount": 0.0,
+      "trace_statistics": {
+        "passed_traces": 4.0,
+        "assertion_type_breakdown": {
+          "assertTrue": 1.0,
+          "assertNotNull": 1.0,
+          "assertFalse": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 4.0
+      },
+      "method_signature": "testIsValid[]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.2520265E7,
+        "most_common_assertion": "assertTrue",
+        "slowest_assertion_ns": 1.57785505E8,
+        "performance_variance": 1.4526524E8,
+        "success_rate_percent": 100.0
+      },
+      "body": "@org.junit.jupiter.api.Test\nvoid testIsValid() {\n    testIsValid(testUrlParts, UrlValidator.ALLOW_ALL_SCHEMES);\n    setUp();\n    final int options \u003d (UrlValidator.ALLOW_2_SLASHES + UrlValidator.ALLOW_ALL_SCHEMES) + UrlValidator.NO_FRAGMENTS;\n    testIsValid(testUrlPartsOptions, options);\n}",
+      "assertion_type": "No Assertions"
+    },
+    "afterState": {
+      "has_assertions": true,
+      "assertion_traces": [
+        {
+          "executionTimeNs": 1.55060147E8,
+          "testMethodName": "testUrl",
+          "assertionType": "assertEquals",
+          "parameters": [
+            "expectedValue",
+            "expectedValue"
+          ],
+          "expectedValue": "expectedValue",
+          "actualValue": "expectedValue",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 30.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        },
+        {
+          "executionTimeNs": 1.2539637E8,
+          "testMethodName": "testCreateUrl_1",
+          "assertionType": "assertNotNull",
+          "parameters": [
+            "SomeObject@1062b"
+          ],
+          "actualValue": "SomeObject@1062b",
+          "passed": true,
+          "executionTime": 0.0,
+          "lineNumber": 38.0,
+          "fileName": "UrlTest.java",
+          "metadata": {
+            "generated_method": "enhanced_mock",
+            "jprofiler_connected": true,
+            "commit_id": "35524402bcd43697f0949e1234532c2a729610ac"
+          }
+        }
+      ],
+      "assertion_lines": [
+        133.0,
+        134.0,
+        140.0
+      ],
+      "commit": "35524402bcd43697f0949e1234532c2a729610ac",
+      "annotations": "No Annotations",
+      "assertion_amount": 3.0,
+      "trace_statistics": {
+        "passed_traces": 2.0,
+        "assertion_type_breakdown": {
+          "assertNotNull": 1.0,
+          "assertEquals": 1.0
+        },
+        "avg_execution_time_ns": 0.0,
+        "total_execution_time_ns": 0.0,
+        "failed_traces": 0.0,
+        "total_traces": 2.0
+      },
+      "diff_from_previous": {
+        "changeType": "signature change",
+        "refactoringType": "SIGNATURE_CHANGE",
+        "methodNameBefore": "testIsValid",
+        "methodNameAfter": "testIsValid",
+        "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+        "assertionChanges": [
+          "Assertion count changed from 0 to 3",
+          "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+          "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+          "New assertion type: assertTrue",
+          "New assertion type: assertEquals"
+        ],
+        "importChanges": [
+          "New usage: java.lang.StringBuilder",
+          "New usage: java.lang.String",
+          "New usage: org.apache.commons.validator.UrlValidator"
+        ],
+        "logicChanges": [
+          "Parameter count changed from 0 to 2",
+          "Statement count changed from 4 to 8",
+          "Control flow \u0027if\u0027 usage changed from 0 to 6",
+          "Control flow \u0027else\u0027 usage changed from 0 to 2",
+          "Control flow \u0027for\u0027 usage changed from 0 to 1",
+          "Control flow \u0027while\u0027 usage changed from 0 to 1"
+        ],
+        "hasSignatureChange": true,
+        "metadata": {}
+      },
+      "method_signature": "testIsValid[final java.lang.Object[] testObjects, final int options]",
+      "runtime_behavior": {
+        "fastest_assertion_ns": 1.2539637E8,
+        "most_common_assertion": "assertNotNull",
+        "slowest_assertion_ns": 1.55060147E8,
+        "performance_variance": 2.9663777E7,
+        "success_rate_percent": 100.0
+      },
+      "body": "/**\n * Create set of tests by taking the testUrlXXX arrays and running through all possible permutations of their combinations.\n *\n * @param testObjects\n * \t\tUsed to create a url.\n */\nvoid testIsValid(final java.lang.Object[] testObjects, final int options) {\n    final org.apache.commons.validator.UrlValidator urlVal \u003d new org.apache.commons.validator.UrlValidator(null, options);\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"));\n    org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"));\n    int statusPerLine \u003d 60;\n    int printed \u003d 0;\n    if (printIndex) {\n        statusPerLine \u003d 6;\n    }\n    do {\n        final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n        boolean expected \u003d true;\n        for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n            final int index \u003d testPartsIndex[testPartsIndexIndex];\n            final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n            testBuffer.append(part[index].item);\n            expected \u0026\u003d part[index].valid;\n        }\n        final java.lang.String url \u003d testBuffer.toString();\n        final boolean result \u003d urlVal.isValid(url);\n        org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n        if (printStatus) {\n            if (printIndex) {\n                java.lang.System.out.print(testPartsIndextoString());\n            } else if (result \u003d\u003d expected) {\n                java.lang.System.out.print(\u0027.\u0027);\n            } else {\n                java.lang.System.out.print(\u0027X\u0027);\n            }\n            printed++;\n            if (printed \u003d\u003d statusPerLine) {\n                java.lang.System.out.println();\n                printed \u003d 0;\n            }\n        }\n    } while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) );\n    if (printStatus) {\n        java.lang.System.out.println();\n    }\n}",
+      "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\")), org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\")), do {\n    final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder();\n    boolean expected \u003d true;\n    for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) {\n        final int index \u003d testPartsIndex[testPartsIndexIndex];\n        final org.apache.commons.validator.ResultPair[] part \u003d ((org.apache.commons.validator.ResultPair[]) (testObjects[testPartsIndexIndex]));\n        testBuffer.append(part[index].item);\n        expected \u0026\u003d part[index].valid;\n    }\n    final java.lang.String url \u003d testBuffer.toString();\n    final boolean result \u003d urlVal.isValid(url);\n    org.junit.jupiter.api.Assertions.assertEquals(expected, result, url);\n    if (printStatus) {\n        if (printIndex) {\n            java.lang.System.out.print(testPartsIndextoString());\n        } else if (result \u003d\u003d expected) {\n            java.lang.System.out.print(\u0027.\u0027);\n        } else {\n            java.lang.System.out.print(\u0027X\u0027);\n        }\n        printed++;\n        if (printed \u003d\u003d statusPerLine) {\n            java.lang.System.out.println();\n            printed \u003d 0;\n        }\n    }\n} while (org.apache.commons.validator.UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )"
+    },
+    "changes": {
+      "changeType": "signature change",
+      "refactoringType": "SIGNATURE_CHANGE",
+      "methodNameBefore": "testIsValid",
+      "methodNameAfter": "testIsValid",
+      "diffSummary": "signature modified, 6 assertion changes, import usage changes, 6 logic changes",
+      "assertionChanges": [
+        "Assertion count changed from 0 to 3",
+        "Added: do { final java.lang.StringBuilder testBuffer \u003d new java.lang.StringBuilder(); boolean expected \u003d true; for (int testPartsIndexIndex \u003d 0; testPartsIndexIndex \u003c testPartsIndex.length; ++testPartsIndexIndex) { final int index \u003d testPartsIndex[testPartsIndexIndex]; final validator[] part \u003d ((validator[]) (testObjects[testPartsIndexIndex])); testBuffer.append(part[index].item); expected \u0026\u003d part[index].valid; } final java.lang.String url \u003d testBuffer.toString(); final boolean result \u003d urlVal.isValid(url); org.junit.jupiter.api.Assertions.assertEquals(expected, result, url); if (printStatus) { if (printIndex) { java.lang.System.out.print(testPartsIndextoString()); } else if (result \u003d\u003d expected) { java.lang.System.out.print(\u0027.\u0027); } else { java.lang.System.out.print(\u0027X\u0027); } printed++; if (printed \u003d\u003d statusPerLine) { java.lang.System.out.println(); printed \u003d 0; } } } while (UrlTest.incrementTestPartsIndex(testPartsIndex, testObjects) )",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com/\"))",
+        "Added: org.junit.jupiter.api.Assertions.assertTrue(urlVal.isValid(\"http://www.google.com\"))",
+        "New assertion type: assertTrue",
+        "New assertion type: assertEquals"
+      ],
+      "importChanges": [
+        "New usage: java.lang.StringBuilder",
+        "New usage: java.lang.String",
+        "New usage: org.apache.commons.validator.UrlValidator"
+      ],
+      "logicChanges": [
+        "Parameter count changed from 0 to 2",
+        "Statement count changed from 4 to 8",
+        "Control flow \u0027if\u0027 usage changed from 0 to 6",
+        "Control flow \u0027else\u0027 usage changed from 0 to 2",
+        "Control flow \u0027for\u0027 usage changed from 0 to 1",
+        "Control flow \u0027while\u0027 usage changed from 0 to 1"
+      ],
+      "hasSignatureChange": true,
+      "metadata": {}
+    },
+    "metadata": {
+      "has_signature_changes": true,
+      "refactoring_type": "SIGNATURE_CHANGE",
+      "has_logic_changes": true,
+      "has_assertion_changes": true,
+      "has_import_changes": true,
+      "change_count": 15,
+      "assertion_change_types": [
+        "Assertion count changed from 0 to 3",
+        "Added",
+        "New assertion type"
+      ],
+      "change_significance": "significant"
+    }
+  }
+]

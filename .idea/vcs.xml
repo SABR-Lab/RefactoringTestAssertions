@@ -2,7 +2,15 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/JavaHamcrest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/main/resources/ambari" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/assertj-core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/commons-lang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/commons-text" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/commons-validator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/json-simple" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/junit-pioneer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/main/resources/junit5-samples" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/temp/commons-lang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tmp/refactoring-toy-example" vcs="Git" />
   </component>

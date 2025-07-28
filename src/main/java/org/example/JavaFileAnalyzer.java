@@ -15,14 +15,12 @@ public class JavaFileAnalyzer {
     private final OutputService outputService;
     private final TraverseCommit traverseCommit;
     private final String outputFilePath;
-    // NEW: Add diff analyzer (for sake of remembering what changed)
     private final TestMethodAnalyzer diffAnalyzer;
 
     public JavaFileAnalyzer(OutputService outputService, TraverseCommit traverseCommit, String outputFilePath) {
         this.outputService = outputService;
         this.traverseCommit = traverseCommit;
         this.outputFilePath = outputFilePath;
-        // NEW: Initialize diff analyzer
         this.diffAnalyzer = new TestMethodAnalyzer();
     }
 
@@ -103,7 +101,7 @@ public class JavaFileAnalyzer {
             // Save initial results to file
             outputService.saveAllTestResults(outputFilePath, allResults);
 
-            // NEW: Automatically run diff analysis and create chunks
+            // Run diff analysis and create chunks
             System.out.println("\n=== Starting Automated Diff Analysis ===");
             diffAnalyzer.analyzeAndCreateChunks(outputFilePath);
 
@@ -160,6 +158,15 @@ public class JavaFileAnalyzer {
                 List<Integer> assertionLines = Assertion.getAssertionLineNumbers(method);
                 String methodSignature = Assertion.getMethodSignature(method);
 
+                // NEW: Collect assertion traces using JProfiler
+                AssertionTraceResults traceResults = null;
+                try {
+                    traceResults = traverseCommit.runTestsWithProfiling(commit, filePath);
+                    System.out.println("Collected " + traceResults.getTotalAssertions() + " assertion traces for " + methodName);
+                } catch (Exception e) {
+                    System.err.println("Failed to collect assertion traces for " + methodName + ": " + e.getMessage());
+                }
+
                 // Create result map
                 Map<String, Object> methodInfo = new HashMap<>();
                 methodInfo.put("commit", commit);
@@ -173,14 +180,71 @@ public class JavaFileAnalyzer {
                 methodInfo.put("assertion_lines", assertionLines);
                 methodInfo.put("has_assertions", assertionAmount > 0);
 
+                // NEW: Add assertion trace data
+                if (traceResults != null) {
+                    methodInfo.put("assertion_traces", traceResults.getTraces());
+                    methodInfo.put("trace_statistics", createTraceStatistics(traceResults));
+                    methodInfo.put("runtime_behavior", createRuntimeBehaviorSummary(traceResults));
+                }
+
                 // Add to results
                 fileResults.computeIfAbsent(methodName, k -> new ArrayList<>())
                         .add(methodInfo);
 
                 System.out.println("Found test method: " + methodName +
                         " at commit: " + commit +
-                        " with " + assertionAmount + " assertions");
+                        " with " + assertionAmount + " assertions" +
+                        (traceResults != null ? " and " + traceResults.getTotalAssertions() + " traces" : ""));
             }
         }
+    }
+
+    /**
+     * Create trace statistics summary
+     */
+    private Map<String, Object> createTraceStatistics(AssertionTraceResults traceResults) {
+        Map<String, Object> stats = new HashMap<>();
+        stats.put("total_traces", traceResults.getTotalAssertions());
+        stats.put("passed_traces", traceResults.getPassedAssertions());
+        stats.put("failed_traces", traceResults.getFailedAssertions());
+        stats.put("total_execution_time_ns", traceResults.getTotalExecutionTime());
+        stats.put("assertion_type_breakdown", traceResults.getAssertionTypeBreakdown());
+        stats.put("avg_execution_time_ns",
+                traceResults.getTotalAssertions() > 0 ?
+                        traceResults.getTotalExecutionTime() / traceResults.getTotalAssertions() : 0);
+        return stats;
+    }
+
+    /**
+     * Creates runtime behavior summary
+     */
+    private Map<String, Object> createRuntimeBehaviorSummary(AssertionTraceResults traceResults) {
+        Map<String, Object> behavior = new HashMap<>();
+
+        // Analyze assertion patterns
+        Map<String, Integer> typeBreakdown = traceResults.getAssertionTypeBreakdown();
+        behavior.put("most_common_assertion",
+                typeBreakdown.entrySet().stream()
+                        .max(Map.Entry.comparingByValue())
+                        .map(Map.Entry::getKey)
+                        .orElse("none"));
+
+        // Performance metrics
+        List<AssertionTrace> traces = traceResults.getTraces();
+        if (!traces.isEmpty()) {
+            long minTime = traces.stream().mapToLong(AssertionTrace::getExecutionTimeNs).min().orElse(0);
+            long maxTime = traces.stream().mapToLong(AssertionTrace::getExecutionTimeNs).max().orElse(0);
+
+            behavior.put("fastest_assertion_ns", minTime);
+            behavior.put("slowest_assertion_ns", maxTime);
+            behavior.put("performance_variance", maxTime - minTime);
+        }
+
+        // Success rate
+        double successRate = traceResults.getTotalAssertions() > 0 ?
+                (double) traceResults.getPassedAssertions() / traceResults.getTotalAssertions() * 100 : 0;
+        behavior.put("success_rate_percent", successRate);
+
+        return behavior;
     }
 }

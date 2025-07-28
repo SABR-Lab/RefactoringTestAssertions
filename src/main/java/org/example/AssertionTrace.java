@@ -9,6 +9,7 @@ import java.util.Map;
  * Assertion traces details
  */
 public class AssertionTrace {
+    private long executionTimeNs;
     private String testMethodName;
     private String assertionType;
     private List<Object> parameters;
@@ -110,6 +111,14 @@ public class AssertionTrace {
     }
     public void setMetadata(Map<String, Object> metadata) {
         this.metadata = metadata;
+    }
+
+    public long getExecutionTimeNs() {
+        return executionTimeNs;
+    }
+
+    public void setExecutionTimeNs(long executionTimeNs) {
+        this.executionTimeNs = executionTimeNs;
     }
 
     @Override

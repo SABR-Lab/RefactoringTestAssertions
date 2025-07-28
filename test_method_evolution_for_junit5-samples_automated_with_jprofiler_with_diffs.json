@@ -1,0 +1,981 @@
+{
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-jupiter-starter-bazel/src/test/java/com/example/project/CalculatorTests.java": {
+    "addsTwoNumbers": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          26.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "addsTwoNumbers[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"1 + 1 \u003d 2\")\nvoid addsTwoNumbers() {\n    com.example.project.Calculator calculator \u003d new com.example.project.Calculator();\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-multiple-engines/src/test/java/junit/vintage/JUnit3Test.java": {
+    "test": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          18.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "No Annotations",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "public void test() {\n    junit.framework.Assert.assertEquals(3, 1 + 2);\n}",
+        "assertion_type": "junit.framework.Assert.assertEquals(3, 1 + 2)"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-jupiter-starter-ant/src/test/java/com/example/project/CalculatorTests.java": {
+    "addsTwoNumbers": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          26.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "addsTwoNumbers[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"1 + 1 \u003d 2\")\nvoid addsTwoNumbers() {\n    com.example.project.Calculator calculator \u003d new com.example.project.Calculator();\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-multiple-engines/src/test/java/testng/TestNGTests.java": {
+    "test2": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.testng.annotations.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test2[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.testng.annotations.Test\npublic void test2() {\n}",
+        "assertion_type": "No Assertions"
+      }
+    ],
+    "test1": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.testng.annotations.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test1[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.testng.annotations.Test\npublic void test1() {\n}",
+        "assertion_type": "No Assertions"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-gradle/src/test/java/com/example/project/FirstTest.java": {
+    "myFirstTest": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          27.0,
+          28.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 2.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "myFirstTest[org.junit.jupiter.api.TestInfo testInfo]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"My 1st JUnit 5 test! 😎\")\nvoid myFirstTest(org.junit.jupiter.api.TestInfo testInfo) {\n    com.example.project.Calculator calculator \u003d new com.example.project.Calculator();\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n    org.junit.jupiter.api.Assertions.assertEquals(\"My 1st JUnit 5 test! 😎\", testInfo.getDisplayName(), () -\u003e \"TestInfo is injected correctly\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\"), org.junit.jupiter.api.Assertions.assertEquals(\"My 1st JUnit 5 test! 😎\", testInfo.getDisplayName(), () -\u003e \"TestInfo is injected correctly\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/com.example.tool/com/example/tool/CalculatorTests.java": {
+    "add": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          22.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "add[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid add() {\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\")"
+      }
+    ],
+    "mul": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          27.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "mul[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid mul() {\n    org.junit.jupiter.api.Assertions.assertEquals(4, calculator.mul(2, 2), \"2 * 2 should equal 4\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(4, calculator.mul(2, 2), \"2 * 2 should equal 4\")"
+      }
+    ],
+    "pow": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          32.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "pow[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid pow() {\n    org.junit.jupiter.api.Assertions.assertEquals(8, calculator.pow(2, 3), \"2 ^ 3 should equal 8\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(8, calculator.pow(2, 3), \"2 ^ 3 should equal 8\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-gradle/src/test/java/com/example/project/SecondTest.java": {
+    "mySecondTest": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          24.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "mySecondTest[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.Disabled\nvoid mySecondTest() {\n    org.junit.jupiter.api.Assertions.assertEquals(2, 1, \"2 is not equal to 1\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, 1, \"2 is not equal to 1\")"
+      }
+    ],
+    "aSlowTest": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "aSlowTest[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.Tag(\"slow\")\nvoid aSlowTest() throws java.lang.InterruptedException {\n    java.lang.Thread.sleep(1000);\n}",
+        "assertion_type": "No Assertions"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-maven/src/test/java/com/example/project/FirstTest.java": {
+    "myFirstTest": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          27.0,
+          28.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 2.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "myFirstTest[org.junit.jupiter.api.TestInfo testInfo]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"My 1st JUnit 5 test! 😎\")\nvoid myFirstTest(org.junit.jupiter.api.TestInfo testInfo) {\n    com.example.project.Calculator calculator \u003d new com.example.project.Calculator();\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n    org.junit.jupiter.api.Assertions.assertEquals(\"My 1st JUnit 5 test! 😎\", testInfo.getDisplayName(), () -\u003e \"TestInfo is injected correctly\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\"), org.junit.jupiter.api.Assertions.assertEquals(\"My 1st JUnit 5 test! 😎\", testInfo.getDisplayName(), () -\u003e \"TestInfo is injected correctly\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-multiple-engines/src/test/java/junit/jupiter/JupiterTests.java": {
+    "test": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          23.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"1 + 2 \u003d 3\")\nvoid test() {\n    org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2);\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(3, 1 + 2)"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-jupiter-starter-gradle/src/test/java/com/example/project/CalculatorTests.java": {
+    "addsTwoNumbers": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          26.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "addsTwoNumbers[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"1 + 1 \u003d 2\")\nvoid addsTwoNumbers() {\n    com.example.project.Calculator calculator \u003d new com.example.project.Calculator();\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/extra.modular/extra/modular/GoodOldTest.java": {
+    "eighteenEqualsNineAndNine": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          20.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "eighteenEqualsNineAndNine[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.Test\npublic void eighteenEqualsNineAndNine() {\n    org.junit.Assert.assertEquals(18, new Calculator().add(9, 9));\n}",
+        "assertion_type": "org.junit.Assert.assertEquals(18, new Calculator().add(9, 9))"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-multiple-engines/src/test/java/junit/vintage/JUnit4Test.java": {
+    "test": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          21.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.Test\npublic void test() {\n    org.junit.Assert.assertEquals(3, 1 + 2);\n}",
+        "assertion_type": "org.junit.Assert.assertEquals(3, 1 + 2)"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-maven/src/test/java/com/example/project/SecondTest.java": {
+    "mySecondTest": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          24.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "mySecondTest[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.Disabled\nvoid mySecondTest() {\n    org.junit.jupiter.api.Assertions.assertEquals(2, 1, \"2 is not equal to 1\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, 1, \"2 is not equal to 1\")"
+      }
+    ],
+    "aSlowTest": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "aSlowTest[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.Tag(\"slow\")\nvoid aSlowTest() throws java.lang.InterruptedException {\n    java.lang.Thread.sleep(1000);\n}",
+        "assertion_type": "No Assertions"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/extra.modular/extra/modular/ExtraModularTests.java": {
+    "moduleName": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          32.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "moduleName[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "// @EnabledIf(\"com.example.tool.Calculator.class.getModule().isNamed()\")\n@org.junit.jupiter.api.Test\nvoid moduleName() {\n    org.junit.jupiter.api.Assumptions.assumeTrue(black.box.Calculator.class.getModule().isNamed(), \"Calculator resides in a named module\");\n    org.junit.jupiter.api.Assertions.assertEquals(\"com.example.tool\", black.box.Calculator.class.getModule().getName());\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(\"com.example.tool\", black.box.Calculator.class.getModule().getName())"
+      }
+    ],
+    "packageName": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          25.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "packageName[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid packageName() {\n    org.junit.jupiter.api.Assertions.assertEquals(\"com.example.tool\", black.box.Calculator.class.getPackage().getName());\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(\"com.example.tool\", black.box.Calculator.class.getPackage().getName())"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/ice.cream/ice/cream/FlavorTests.java": {
+    "random": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          22.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "random[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid random() {\n    ice.cream.Flavor flavor \u003d ice.cream.Flavor.random();\n    org.junit.jupiter.api.Assertions.assertNotNull(flavor);\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertNotNull(flavor)"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-jupiter-starter-maven/src/test/java/com/example/project/CalculatorTests.java": {
+    "addsTwoNumbers": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          26.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "addsTwoNumbers[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\n@org.junit.jupiter.api.DisplayName(\"1 + 1 \u003d 2\")\nvoid addsTwoNumbers() {\n    com.example.project.Calculator calculator \u003d new com.example.project.Calculator();\n    org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(2, calculator.add(1, 1), \"1 + 1 should equal 2\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-maven/src/test/java/com/example/project/JUnit4Test.java": {
+    "test": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          21.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.Test\npublic void test() {\n    org.junit.Assert.assertEquals(3, 1 + 2);\n}",
+        "assertion_type": "org.junit.Assert.assertEquals(3, 1 + 2)"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/com.example.tool/com/example/tool/internal/MathHelperTests.java": {
+    "pow": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          22.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "pow[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid pow() {\n    org.junit.jupiter.api.Assertions.assertEquals(8, MathHelper.pow(2, 3), \"2 ^ 3 should equal 8\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(8, MathHelper.pow(2, 3), \"2 ^ 3 should equal 8\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-gradle/src/test/java/com/example/project/OtherTests.java": {
+    "testThisThing": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "testThisThing[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid testThisThing() {\n}",
+        "assertion_type": "No Assertions"
+      }
+    ],
+    "testThisOtherThing": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "testThisOtherThing[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid testThisOtherThing() {\n}",
+        "assertion_type": "No Assertions"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/com.example.application/com/example/application/MainTests.java": {
+    "simpleName": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          21.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "simpleName[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid simpleName() {\n    org.junit.jupiter.api.Assertions.assertEquals(\"Main\", com.example.application.Main.class.getSimpleName());\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(\"Main\", com.example.application.Main.class.getSimpleName())"
+      }
+    ],
+    "main": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          27.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "main[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid main() {\n    java.io.PrintStream standard \u003d java.lang.System.out;\n    try {\n        java.io.ByteArrayOutputStream bytes \u003d new java.io.ByteArrayOutputStream();\n        java.lang.System.setOut(new java.io.PrintStream(bytes));\n        Main.main(\"99\", \"1\");\n        java.lang.String actual \u003d bytes.toString().replace(\"\\n\", \"\").replace(\"\\r\", \"\");\n        org.junit.jupiter.api.Assertions.assertEquals(\"99 + 1 \u003d 100\", actual);\n    } finally {\n        java.lang.System.setOut(standard);\n    }\n}",
+        "assertion_type": "try {\n    java.io.ByteArrayOutputStream bytes \u003d new java.io.ByteArrayOutputStream();\n    java.lang.System.setOut(new java.io.PrintStream(bytes));\n    Main.main(\"99\", \"1\");\n    java.lang.String actual \u003d bytes.toString().replace(\"\\n\", \"\").replace(\"\\r\", \"\");\n    org.junit.jupiter.api.Assertions.assertEquals(\"99 + 1 \u003d 100\", actual);\n} finally {\n    java.lang.System.setOut(standard);\n}"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-jupiter-extensions/src/test/java/com/example/random/RandomParametersExtensionTests.java": {
+    "injectsDouble": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          34.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "injectsDouble[@com.example.random.RandomParametersExtension.Random\ndouble d]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid injectsDouble(@com.example.random.RandomParametersExtension.Random\ndouble d) {\n    org.junit.jupiter.api.Assertions.assertEquals(0.0, d, 1.0);\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(0.0, d, 1.0)"
+      }
+    ],
+    "injectsInteger": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          29.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "injectsInteger[@com.example.random.RandomParametersExtension.Random\nint i, @com.example.random.RandomParametersExtension.Random\nint j]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid injectsInteger(@com.example.random.RandomParametersExtension.Random\nint i, @com.example.random.RandomParametersExtension.Random\nint j) {\n    org.junit.jupiter.api.Assertions.assertNotEquals(i, j);\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertNotEquals(i, j)"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-maven/src/test/java/com/example/project/OtherTests.java": {
+    "testThisThing": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "testThisThing[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid testThisThing() {\n}",
+        "assertion_type": "No Assertions"
+      }
+    ],
+    "testThisOtherThing": [
+      {
+        "has_assertions": false,
+        "assertion_traces": [],
+        "assertion_lines": [],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 0.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "testThisOtherThing[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid testThisOtherThing() {\n}",
+        "assertion_type": "No Assertions"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-modular-world/src/test/ice.cream/ice/cream/MachineTests.java": {
+    "caption": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          23.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "caption[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid caption() {\n    java.lang.String actual \u003d new ice.cream.Machine().getCaption();\n    org.junit.jupiter.api.Assertions.assertTrue(actual.startsWith(\"Ice Cream Machine\"));\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertTrue(actual.startsWith(\"Ice Cream Machine\"))"
+      }
+    ],
+    "id": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          30.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.jupiter.api.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "id[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.jupiter.api.Test\nvoid id() {\n    java.lang.String expected \u003d \"ice-cream-machine\";\n    java.lang.String actual \u003d new ice.cream.Machine().getId();\n    org.junit.jupiter.api.Assertions.assertEquals(expected, actual, \"Machine ID mismatch!\");\n}",
+        "assertion_type": "org.junit.jupiter.api.Assertions.assertEquals(expected, actual, \"Machine ID mismatch!\")"
+      }
+    ]
+  },
+  "/Users/jesusvaladez/Desktop/RefactoringMiner 2/src/main/resources/junit5-samples/junit-migration-gradle/src/test/java/com/example/project/JUnit4Test.java": {
+    "test": [
+      {
+        "has_assertions": true,
+        "assertion_traces": [],
+        "assertion_lines": [
+          21.0
+        ],
+        "commit": "f3f2144e6102c4c7dce588febfc2ee31f8e2d3e0",
+        "annotations": "@org.junit.Test",
+        "assertion_amount": 1.0,
+        "trace_statistics": {
+          "passed_traces": 0.0,
+          "assertion_type_breakdown": {},
+          "avg_execution_time_ns": 0.0,
+          "total_execution_time_ns": 0.0,
+          "failed_traces": 0.0,
+          "total_traces": 0.0
+        },
+        "method_signature": "test[]",
+        "runtime_behavior": {
+          "most_common_assertion": "none",
+          "success_rate_percent": 0.0
+        },
+        "body": "@org.junit.Test\npublic void test() {\n    org.junit.Assert.assertEquals(3, 1 + 2);\n}",
+        "assertion_type": "org.junit.Assert.assertEquals(3, 1 + 2)"
+      }
+    ]
+  }
+}
